@@ -1,0 +1,32 @@
+
+.headerHome{
+    margin-top: -70px ;
+    height: 450px;
+    background-image: linear-gradient(90deg, #6B006A, #16006A);
+    z-index: -2; /*push to the background */
+}
+.title{
+
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+    padding-top: 175px;
+    padding-left: 100px;
+    text-align: justify;
+ }
+
+.subtitle {
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 100px;
+    text-align: justify;
+}
+
+.ImgHome {
+    width: 57%;
+    margin-top: -375px;
+
+    float: right;
+}
+

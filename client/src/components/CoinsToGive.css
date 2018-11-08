@@ -1,0 +1,14 @@
+
+
+.coins-label label{
+    color: #4D4D4D !important;
+    background-color: white;
+    text-align:left;
+    width: 200px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.qtd-label {
+    text-align: right !important;
+}

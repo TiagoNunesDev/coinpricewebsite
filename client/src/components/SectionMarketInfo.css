@@ -1,0 +1,46 @@
+.section{
+    width: 100%;
+    height: 175px;
+    background: #F3F3F3;
+}
+.row{
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+}
+
+.MC{
+    width: 20%;
+    position: center;
+}
+
+.MC p{
+
+    font-size: 15px;
+    font-weight: bold;
+color: #16006A;
+}
+
+.BTC{
+    width: 25%;
+    padding-right: 20px;
+    position: center;
+}
+
+.BTC p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #16006A;
+}
+
+
+.section h4{
+    position: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    font-weight: 600;
+    font-size: 20px;
+}
+
+

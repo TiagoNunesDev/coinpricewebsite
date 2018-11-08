@@ -1,0 +1,13 @@
+.increase{
+    font-weight: bold;
+        color: darkgreen;
+}
+.decrease{
+    font-weight: bold;
+    color: red;
+}
+
+.neutro{
+    font-weight: bold;
+    color: black;
+}

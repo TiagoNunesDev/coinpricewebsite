@@ -1,0 +1,16 @@
+label {
+    color:white !important;
+    background-color: #4D4D4D;
+    width: 40px;
+    margin-left: 5px;
+    font-size: 35px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.pump-slash {
+    background-color: white;
+    color: #4d4d4d !important;
+    font-weight: bold;
+}

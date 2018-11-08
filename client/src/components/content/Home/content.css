@@ -1,0 +1,53 @@
+.market{
+    font-size: 15px;
+    font-weight: bold;
+    color: #16006A;
+}
+
+
+.price{
+    font-size: 15px;
+    font-weight: bold;
+    color: #16006A;
+}
+
+.rank{
+    color: #16006A;
+}
+.volume{
+    font-size: 15px;
+    font-weight: bold;
+    color: #16006A;
+}
+
+.Name{
+    font-size: 15px;
+    font-weight: bold;
+    color: #16006A;
+}
+
+.Name img{
+    margin-right: 10px;
+}
+
+.title{
+
+}
+
+.title h4{
+    margin: 25px 40% 0 40%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.title input{
+    float: right;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+
+
+}
