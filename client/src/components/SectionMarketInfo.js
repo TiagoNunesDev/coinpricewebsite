@@ -5,7 +5,9 @@ import numeral from 'numeral'
 import axios from "axios/index";
 
 
-const API = '/getVotes';
+const API_SERVER= '/getVotes';
+const API_COINMARKET =  'https://api.coinmarketcap.com/v1/global/';
+const API_ICONS = 'https://s2.coinmarketcap.com/static/img/coins/16x16/';
 
 export default class SectionMarketInfo extends React.Component {
 
@@ -24,36 +26,6 @@ export default class SectionMarketInfo extends React.Component {
         };
     }
 
-
-//     var that = this;
-//     axios.all([
-//                   axios.get(`https://api.coinmarketcap.com/v1/ticker/?start=${this.props.match.params.page - 100}&limit=100`),
-//                   axios.get('https://s2.coinmarketcap.com/generated/search/quick_search.json')
-//               ])
-// .then(axios.spread(function (data, list) {
-//         var result = list.data.reduce(function(obj,item){
-//             obj[item.name] = item.id;
-//             return obj;
-//         }, {});
-//         that.setState({
-//             data: data.data,
-//             id: result
-//         })
-//     }))
-// .catch(error => console.log(error));
-
-    // componentWillMount() {
-    //     fetch('https://api.coinmarketcap.com/v1/global/')
-    //         .then(response => response.json())
-    //         .then((data) => {
-    //             this.setState({
-    //                 total: data.total_market_cap_usd,
-    //                 volumevinteh: data.total_24h_volume_usd,
-    //                 dominance: data.bitcoin_percentage_of_market_cap
-    //             })
-    //         })
-    // };
-
     sorting = (x,y) => {
         return y.votes - x.votes;
     }
@@ -62,8 +34,8 @@ export default class SectionMarketInfo extends React.Component {
         var that = this;
 
         axios.all([
-            axios.get('https://api.coinmarketcap.com/v1/global/'),
-            axios.get('getVotes')
+            axios.get(API_COINMARKET),
+            axios.get(API_SERVER)
             ]
         ).then(axios.spread(function (market,server) {
             console.log(market);
@@ -76,14 +48,14 @@ export default class SectionMarketInfo extends React.Component {
 
             // let cns = [];
             var cns = server.data.map(function(item,idx){
-               return {name: item.name , coinId: item.votes};
+               return {name: item.name , votes: item.votes , coinId:item.coinId};
             });
-            console.log("OLOK",cns);
-            cns.sort(that.sorting);
+            // console.log("OLOK",cns);
+            // cns.sort(that.sorting);
 
-            console.log("koko",cns);
+            // console.log("koko",cns);
 
-            that.setState({voted:cns});
+            that.setState({voted:cns.sort(that.sorting)});
 
         })).catch(error => console.log(error));
     };
@@ -116,21 +88,16 @@ export default class SectionMarketInfo extends React.Component {
                             </div>
                             <div    className={marketinfo.MC}>
                                 <h4>MOST VOTED</h4>
-                                {/*this.state.voted.map(function*/}
-                                <div>
-
-                                    {
-                                        this.state.voted.map(function(item){
-                                            console.log(item);
-                                        })
-                                    }
-                                    {/*this.*/}
-                                    {/*<div>*/}
-                                        {/*<label>Bitcoin</label>*/}
-                                    {/*</div>*/}
-
-
-                                </div>
+                                    {this.state.voted.map(function(item,idx){
+                                            if(idx < 3)
+                                                return (
+                                                    <div key={idx}>
+                                                        <img src = {API_ICONS + item.coinId+'.png'} style={{width: 16, height: 16}}/>
+                                                        <label>{item.name}</label>
+                                                    </div>
+                                                )
+                                        }
+                                    )}
                             </div>
                         </div>
                     </Container>
