@@ -7,7 +7,7 @@ export default class Header extends React.Component {
         var listHeader = [
             <Navbar className={header.Navigation}>
                     <div className={header.logo}>
-                        <a href="#">CoinPrice</a>
+                        <a href="#">Bitclime</a>
                     </div>
                     <div className={header.menu}>
                         <ul>

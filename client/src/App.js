@@ -31,7 +31,7 @@ class App extends Component {
               </div>
                   <Router>
                       <div>
-                      <Route exact path="/" component={Home} />
+                      <Route exact path="/"      component={Home} />
                       <Route exact path="/:page" component={Page}/>
                       <PaginationCustom />
                       </div>
