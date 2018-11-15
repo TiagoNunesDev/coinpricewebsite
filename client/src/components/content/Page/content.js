@@ -1,5 +1,5 @@
 import React from "react";
-import {Table} from 'reactstrap';
+import {Table,Button,Input} from 'reactstrap';
 import axios from 'axios';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -76,7 +76,10 @@ class Content extends React.Component {
                     <td className={pagecontent.volume}><NumberFormat value={item['24h_volume_usd']} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
                     {/*<td>{item.available_supply}</td>*/}
                     <td> <Percentage percent={item.percent_change_24h}/> </td>
-
+                    <td>#priceUp#</td>
+                    <td>#priceUp#</td>
+                    <td><Button>Vote In</Button></td>
+                    <td><i className="fa fa-caret-down" /></td>
                 </tr>
             )
         })
@@ -94,6 +97,9 @@ class Content extends React.Component {
                             <th>Price</th>
                             <th>Volume (24h)</th>
                             <th>Change (24h)</th>
+                            <th>Price Up</th>
+                            <th>Price Down</th>
+                            <th>Vote In</th>
                         </tr>
                     </thead>
                     <tbody>

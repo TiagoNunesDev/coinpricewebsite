@@ -50,17 +50,11 @@ export default class SectionMarketInfo extends React.Component {
             var cns = server.data.map(function(item,idx){
                return {name: item.name , votes: item.votes , coinId:item.coinId};
             });
-            // console.log("OLOK",cns);
-            // cns.sort(that.sorting);
-
-            // console.log("koko",cns);
 
             that.setState({voted:cns.sort(that.sorting)});
 
         })).catch(error => console.log(error));
     };
-
-
 
 
     render() {

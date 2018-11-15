@@ -36,6 +36,16 @@ app.get('/getVotes' , (req,res) =>{
 });
 
 
+// tem que escrever a
+
+app.get('/insertvote',(req,res) =>{
+    console.log(req.query.id);
+    console.log(req.query.name);
+    console.log(req.query.symbol);
+    console.log(req.connection.remoteAddress);
+});
+
+
 // app.get('/api/customers', (req,res) => {
 //     const customers = [
 //         {id:1, firstName:'John', lastName: 'Doe'},
