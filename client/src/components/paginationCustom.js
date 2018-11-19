@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import page from './pagination.css'
+
 
 class PaginationCustom extends Component {
     constructor(props){
@@ -20,13 +22,14 @@ class PaginationCustom extends Component {
             </PaginationItem>)
         }
         return array
-    }
+    };
+
     render(){
         console.log(this.state.pags)
         return (
-            <Pagination>
-                {this.renderPagination()}
-            </Pagination>
+                <Pagination>
+                    {this.renderPagination()}
+                </Pagination>
         )
     }
 }

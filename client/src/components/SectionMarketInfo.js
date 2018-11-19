@@ -38,8 +38,6 @@ export default class SectionMarketInfo extends React.Component {
             axios.get(API_SERVER)
             ]
         ).then(axios.spread(function (market,server) {
-            console.log(market);
-            console.log(server);
             that.setState({
                 total:market.data.total_market_cap_usd,
                 volumevinteh: market.data.total_24h_volume_usd,

@@ -49,3 +49,8 @@
     width: 30%;
 }
 
+.home-test {
+    display: flex;
+    float: left;
+    width: 70px !important;
+}

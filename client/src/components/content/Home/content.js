@@ -161,7 +161,7 @@ class Content extends React.Component {
     render(){
         const {selectOption} = this.state;
         return (
-            <div className="container-fluid">
+            <div className="container-fluid ">
                 <div>
                     <div className={homecontent.title}>
                         <h4>All CryptoCurrencies</h4>
