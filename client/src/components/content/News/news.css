@@ -1,0 +1,28 @@
+.news-table {
+    margin-left: 50px !important;
+    margin-right: 20px !important;
+    background-color: #F3F3F3;
+    margin-bottom: 15px !important;
+    width: 300px;
+    border: 1px solid #B2B2B2;
+}
+
+.news-table tr {
+   color:#CA2E3D;
+}
+
+
+a:link {
+    margin-left:  5px;
+    margin-right: 5px;
+
+    color: #494949;
+    text-decoration: none;
+}
+.news-table label {
+    text-align: center;
+    width: 30px;
+    height: 20px;
+    background-color: #310084;
+    color:#ffffff;
+}

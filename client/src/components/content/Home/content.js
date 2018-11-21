@@ -6,7 +6,7 @@ import Percentage from "../Percentage/Percentage";
 import homecontent from "../Home/content.css"
 import NumberFormat from 'react-number-format';
 import Select from 'react-select'
-
+import News from '../News/news'
 
 const options = [];
 
@@ -73,7 +73,7 @@ class Content extends React.Component {
             if(k < 100)
             val.push(
                 <><tr key={k} >
-                        <th className={homecontent.rank} scope="row">{item.rank}</th>
+                        <td className={homecontent.rank} scope="row">{item.rank}</td>
                         <td className={homecontent.Name}>
                             <img  src={`https://s2.coinmarketcap.com/static/img/coins/32x32/${item.id}.png`} />
                             {item.name}
@@ -99,8 +99,8 @@ class Content extends React.Component {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><Button>UP</Button></td>
-                                            <td><Button>DOWN</Button></td>
+                                            <td><button>UP</button></td>
+                                            <td><button>DOWN</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -175,26 +175,30 @@ class Content extends React.Component {
                     </div>
 
                 </div>
-                <Table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Market Cap</th>
-                            <th>Price</th>
-                            <th>Volume (24h)</th>
-                            <th>Change (24h)</th>
-                            <th>Price Up(1h)</th>
-                            <th>Price Down(1h)</th>
-                            <th>Vote In</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.data ? this.renderRow() : null}
-                        {/*{this.state.data ? this.addAccordeon(): null}*/}
-                    </tbody>
-                </Table>
+                <div className={homecontent["home-test"]}>
+                    <table className={homecontent["home-cp-table"]}>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Market Cap</th>
+                                <th>Price</th>
+                                <th>Volume (24h)</th>
+                                <th>Change (24h)</th>
+                                <th>Price Up(1h)</th>
+                                <th>Price Down(1h)</th>
+                                <th>Vote In</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.data ? this.renderRow() : null}
+                        </tbody>
+                    </table>
+                    <div>
+                        <News />
+                    </div>
+                </div>
             </div>
         )
     }
