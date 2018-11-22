@@ -59,9 +59,8 @@ export default class SectionMarketInfo extends React.Component {
         return (
 
                 <div className={marketinfo.section}>
-                    {console.log(this.state.voted)}
-                    <Container>
-                        <div className={marketinfo.row}>
+                    {/*{console.log(this.state.voted)}*/}
+
                             <div  className={marketinfo.MC}>
                                 <h4>Market Cap</h4>
                                 <p>{this.state.total ? numeral(this.state.total).format('$0,0.00') : null}</p>
@@ -80,19 +79,19 @@ export default class SectionMarketInfo extends React.Component {
                             </div>
                             <div    className={marketinfo.MC}>
                                 <h4>MOST VOTED</h4>
+                                <div className={marketinfo.MV}>
                                     {this.state.voted.map(function(item,idx){
                                             if(idx < 3)
                                                 return (
-                                                    <div key={idx}>
-                                                        <img src = {API_ICONS + item.coinId+'.png'} style={{width: 16, height: 16}}/>
-                                                        <label>{item.name}</label>
-                                                    </div>
+                                                    <><img src = {API_ICONS + item.coinId+'.png'} style={{width: 16, height: 16}}/>
+                                                        <label>{item.name}</label></>
                                                 )
                                         }
                                     )}
+                                </div>
                             </div>
-                        </div>
-                    </Container>
+
+
                 </div>
 
         );

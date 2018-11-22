@@ -4,7 +4,7 @@
     background-color: #F3F3F3;
     margin-bottom: 15px !important;
     width: 300px;
-    border: 1px solid #B2B2B2;
+    /*border: 1px solid #4740b2;*/
 }
 
 .news-table tr {
@@ -16,9 +16,16 @@ a:link {
     margin-left:  5px;
     margin-right: 5px;
 
-    color: #494949;
+    color: #172f49;
     text-decoration: none;
 }
+
+label {
+    width: 100%;
+    text-align: center;
+}
+
+
 .news-table label {
     text-align: center;
     width: 30px;
@@ -26,3 +33,4 @@ a:link {
     background-color: #310084;
     color:#ffffff;
 }
+

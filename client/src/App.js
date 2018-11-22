@@ -24,7 +24,7 @@ class App extends Component {
                 <Header/>
             </div>
             <div>
-            <HomeWrapper/>
+            {/*<HomeWrapper/>*/}
             </div>
               <div>
                   <SectionMarketInfo/>

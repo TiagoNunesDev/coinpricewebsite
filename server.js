@@ -35,14 +35,44 @@ app.get('/getVotes' , (req,res) =>{
     });
 });
 
+app.get('/getsentiment',(req,res) => {
+        let sql = 'SELECT * FROM sentiment';
+        db.query(sql,(err,resuts) => {
+            if(err) throw err;
+            res.json(resuts);
+        })
+});
+
 
 // tem que escrever a
 
 app.get('/insertvote',(req,res) =>{
-    console.log(req.query.id);
-    console.log(req.query.name);
-    console.log(req.query.symbol);
-    console.log(req.connection.remoteAddress);
+
+    let sql = 'INSERT INTO votes (coinId,name,symbol,votes) VALUES (?,?,?,1) ON DUPLICATE KEY UPDATE `votes` = `votes` + 1';
+
+    db.query(sql,[req.query.id,req.query.name,req.query.symbol],(err,results) => {
+        if(err) throw  err;
+        res.json(results);
+    })
+});
+
+app.get('/insertsentimentUP', (req,res) => {
+
+    let sql = 'INSERT INTO sentiment (coinId,name,symbol,upvotes,downvotes) VALUES (?,?,?,1,0) ON DUPLICATE KEY UPDATE `upvotes` = `upvotes` + 1';
+
+    db.query(sql,[req.query.id,req.query.name,req.query.symbol],(err,results) => {
+        if(err) throw  err;
+        res.json(results);
+    })
+});
+
+app.get('/insertsentimentDOWN', (req,res) => {
+    let sql = 'INSERT INTO sentiment (coinId,name,symbol,upvotes,downvotes) VALUES (?,?,?,0,1) ON DUPLICATE KEY UPDATE `downvotes` = `downvotes` + 1';
+
+    db.query(sql,[req.query.id,req.query.name,req.query.symbol],(err,results) => {
+        if(err) throw  err;
+        res.json(results);
+    })
 });
 
 

@@ -21,16 +21,10 @@ class News extends Component {
             }).catch(error => console.log(error))
     };
 
-    handleClick = (e) => {
-        console.log(e.target.value)
-    };
-
 
     addNews = () => {
         var self = this;
-
         var arr = [];
-
         self.state.news.map((item,idx) => {
             arr.push(
                 <div className={news["news-table"]}>
@@ -42,7 +36,6 @@ class News extends Component {
 
         return arr;
     };
-
 
     render(){
         return(
