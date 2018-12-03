@@ -1,8 +1,8 @@
 import React ,{Component} from 'react'
 
 import styles from "./Airdrop.css"
-import Timer from "./Timer"
-import CoinsToGive from "./CoinsToGive";
+import Timer from "./content/Airdrop/Timer"
+import CoinsToGive from "./content/Airdrop/CoinsToGive";
 
 
 class Airdrop extends  Component{

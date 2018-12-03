@@ -1,21 +1,23 @@
 import React from "react";
-import rodape from './Footer.css'
+import footer from './Footer.css'
 
 export default class Footer extends React.Component {
     render() {
         return (
-           <footer className={rodape.footer}>
-               <div className={rodape.logo}>
-                   <a href="#">CoinPrice</a>
-               </div>
-               <div className={rodape.redes}>
-                   <ul>
-                       <li><a href="https://www.facebook.com/profile.php?id=100000724132457"><i className="fab fa-facebook-square"></i></a></li>
-                       <li><a href="#"><i className="fab fa-twitter-square"></i></a></li>
-                       <li><a href="#"><i className="fab fa-discord"></i></a></li>
-                   </ul>
-               </div>
-           </footer>
+            <div>
+            <div className ={ footer["footer-body"]}>
+               <footer>
+                   <div className={ footer["footer-website-name"]}>
+                       <a href="#">CoinPrice</a>
+                   </div>
+                   <div className={footer["footer-social-icons"]} >
+                       <a href="https://www.facebook.com/profile.php?id=100000724132457"><i className="fab fa-facebook-square" style={{width: 32, height: 32}}/></a>
+                       <a href="#"><i className="fab fa-twitter-square" style={{width: 32, height: 32}}/></a>
+                       <a href="#"><i className="fab fa-discord" style={{width: 32, height: 32}} /></a>
+                   </div>
+               </footer>
+            </div>
+            </div>
         );
     }
 }

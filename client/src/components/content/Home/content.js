@@ -7,6 +7,8 @@ import homecontent from "../Home/content.css"
 import NumberFormat from 'react-number-format';
 import Select from 'react-select'
 import News from '../News/news'
+import SectionMarketInfo from './SectionMarketInfo'
+import Footer from "../../Footer";
 
 const options = [];
 
@@ -26,8 +28,13 @@ class Content extends React.Component {
 
 
     componentWillMount() {
+
         this.fetchData();
         // this.fetchSentiment();
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps)
     }
 
     fetchData = () =>{
@@ -241,6 +248,10 @@ class Content extends React.Component {
 
         return (
             <div >
+                <div>
+                    <SectionMarketInfo/>
+                </div>
+                {/*<h1>OLA</h1>*/}
                 <div className={homecontent["home-h4"]}>
                     <h4>All CryptoCurrencies</h4>
                 </div>
@@ -285,6 +296,9 @@ class Content extends React.Component {
                         <News />
                     </div>
                 </div>
+                {/*<div>*/}
+                    {/*<Footer/>*/}
+                {/*</div>*/}
             </div>
         )
     }

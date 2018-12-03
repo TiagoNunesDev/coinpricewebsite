@@ -1,0 +1,32 @@
+.row{
+    height: 100px;
+}
+.row.after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float:left;
+    width:50%;
+    height: 250px;
+    background-color: #F2F2F2;
+    /*border-top:    1px solid #D2D2D2;*/
+    /*border-bottom: 1px solid #D2D2D2;*/
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.column h1, .timer h1 , .giveColumn h1{
+    color: #353535;
+}
+
+.column p {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    color:#494949;
+}

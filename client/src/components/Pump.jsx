@@ -1,6 +1,6 @@
 import React , {Component} from 'react'
 import style from "./Pump.css"
-import Timer from "./Timer"
+import Timer from "./content/Airdrop/Timer"
 
 const API = '/getVotes';
 const API_ICONS = 'https://s2.coinmarketcap.com/static/img/coins/16x16/';

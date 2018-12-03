@@ -10,35 +10,47 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import HomeWrapper from "./components/HomeWrapper"
-import SectionMarketInfo from "./components/SectionMarketInfo";
+import SectionMarketInfo from "./components/content/Home/SectionMarketInfo";
 import Home from './components/content/Home/content';
 import Page from './components/content/Page/content';
 import PaginationCustom from './components/paginationCustom';
+// import Airdrop from './components/Airdrop'
+import Airdrop from './components/content/Airdrop/Airdrop'
+import Pump from './components/content/Pump/Pump'
+import AppContainer from './components/AppContainer'
+
+import {NavLink} from 'react-router-dom'
+import {browserHistory} from 'react-router';
+
 
 
 class App extends Component {
-  render() {
+
+    render() {
     return (
         <div>
-            <div>
-                <Header/>
-            </div>
-            <div>
-            {/*<HomeWrapper/>*/}
-            </div>
+
               <div>
-                  <SectionMarketInfo/>
-              </div>
                   <Router>
+
                       <div>
+
+                      <Header />
+
                       <Route exact path="/"      component={Home}/>
-                      <Route exact path="/:page" component={Page}/>
-                      <PaginationCustom />
+                      {/*<Route path="/:page" component={Page}/>*/}
+                      <Route path="/airdrop" component = {Airdrop}/>
+                      <Route path="/pump"    component = {Pump}  />
+                      {/*<PaginationCustom />*/}
+
+
                       </div>
+
                   </Router>
-              <div>
-          <Footer/>
-          </div>
+                  <Footer/>
+              </div>
+          {/*<Footer/>*/}
+          {/*</div>*/}
         </div>
     );
   }
